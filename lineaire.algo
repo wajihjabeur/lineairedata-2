@@ -1,0 +1,105 @@
+ALGORITHM probleme 1 sol1
+VAR
+    sum : INTEGER:=0
+    i,j,elt:INTEGER
+BEGIN
+Read (set1)
+Read (set2)
+    FOR i FROM 0 TO set1.length-1   DO
+        FOR j FROM 0 TO set2.length-1   DO
+            IF (set1[i]<>set2[j]) THEN
+                elt=set1[i]
+                sum=sum+elt
+            END_IF
+            
+        END_FOR
+    END_FOR
+    FOR i FROM 0 TO set2.length-1   DO
+        FOR j FROM 0 TO set1.length-1   DO
+            IF (set2[i]<>set1[j]) THEN
+                elt=set2[i]
+                sum=sum+elt
+            END_IF
+            
+        END_FOR
+    END_FOR
+    write(sum)   
+END
+
+
+
+ALGORITHM problem 2 sol1
+VAR
+    i,j,elt:INTEGER
+    sum:INTEGER:=0
+BEGIN
+Read (set1)
+Read (set2)
+FOR i FROM 0 TO set1.length-1   DO
+    FOR j FROM 0 TO set2.length-1   DO
+        IF (set1[i]=set2[j]) THEN
+            elt=set[i]
+            sum=sum+(elt*2)
+        END_IF
+    END_FOR
+END_FOR
+write(sum)
+    
+END
+
+
+
+ALGORITHM prob 1 sol2 
+VAR
+    i,j,elt:INTEGER
+    sum,nb:INTEGER:=0
+    HASH_TABLE<INTEGER,INTEGER>
+BEGIN
+    Read(set1)
+    Read(set2)
+    set3=concat(set1,set2)
+    FOR i FROM 0 TO max set3.length-1   DO
+        FOR j FROM 0 TO max set3.length-1 DO
+            IF (set3[i]=set3[j+1]) THEN
+                nb=nb+1
+                
+            
+            END_IF
+        END_FOR
+        htab.insert(set3[i],nb)
+    END_FOR
+FOR i FROM 0 TO htab.length-1   DO
+    IF (htab.get(htab[i]=1)) THEN
+        sum=sum+htab[i]
+    END_IF
+END_FOR
+write(sum)
+END
+
+ALGORITHM prob 2 sol 2 
+VAR
+    i,j,elt:INTEGER
+    sum,nb:INTEGER:=0
+    HASH_TABLE<INTEGER,INTEGER>
+BEGIN
+    Read(set1)
+    Read(set2)
+    set3=concat(set1,set2)
+    FOR i FROM 0 TO max set3.length-1   DO
+        FOR j FROM 0 TO max set3.length-1 DO
+            IF (set3[i]=set3[j+1]) THEN
+                nb=nb+1
+                
+            
+            END_IF
+        END_FOR
+        htab.insert(set3[i],nb)
+    END_FOR
+FOR i FROM 0 TO htab.length-1   DO
+    IF (htab.get(htab[i]!=1)) THEN
+        sum=sum+htab[i]*htab.get(htab[i])
+    END_IF
+END_FOR
+write(sum)
+END
+
